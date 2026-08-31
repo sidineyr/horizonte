@@ -1,5 +1,5 @@
 import { counterDatabase } from '@/lib/counter';
-const headers = { 'Cache-Control': 'no-store' };
+const headers = { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' };
 export async function GET() {
  try {
   const db = await counterDatabase();

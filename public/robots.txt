@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://horizonte-vocacional.blubier.chatgpt.site/sitemap.xml

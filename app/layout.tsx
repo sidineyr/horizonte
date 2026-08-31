@@ -5,6 +5,9 @@ const description = 'Explore seus interesses, suas possibilidades de formação 
 const image = 'https://horizonte-vocacional.blubier.chatgpt.site/og.png';
 export const metadata: Metadata = {
  title, description,
+ alternates: { canonical: 'https://horizonte-vocacional.blubier.chatgpt.site/' },
+ robots: { index: true, follow: true },
+ verification: { google: 'PC5Jb-nRbCO9IwJ_YQNDpJFpqOldwyEjN_pBfv0OKkw' },
  metadataBase: new URL('https://horizonte-vocacional.blubier.chatgpt.site'),
  icons: {icon:'/favicon.svg'},
  openGraph: { title, description, locale: 'pt_BR', type: 'website', images: [{url:image,alt:'Horizonte — Eu quero ser…'}] },
