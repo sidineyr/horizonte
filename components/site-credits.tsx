@@ -11,6 +11,7 @@ export function SiteCredits() {
           <a href="https://www.linkedin.com/in/sidineyrodrigues/?locale=pt" target="_blank" rel="noopener noreferrer"><ExternalLink size={17} aria-hidden="true"/> LinkedIn <span className="sr-only">(abre em nova aba)</span></a>
           <a href="https://github.com/sidineyr" target="_blank" rel="noopener noreferrer"><ExternalLink size={17} aria-hidden="true"/> GitHub <span className="sr-only">(abre em nova aba)</span></a>
           <a href="https://sidineyr.github.io/Chemical/" target="_blank" rel="noopener noreferrer"><ExternalLink size={16} aria-hidden="true"/> Projeto Chemical <span className="sr-only">(abre em nova aba)</span></a>
+          <a href="http://lattes.cnpq.br/6984746568461949" target="_blank" rel="noopener noreferrer"><ExternalLink size={17} aria-hidden="true"/> Currículo Lattes <span className="sr-only">(abre em nova aba)</span></a>
         </nav>
       </div>
       <div className="credits-details">
@@ -21,4 +22,3 @@ export function SiteCredits() {
     </footer>
   );
 }
-

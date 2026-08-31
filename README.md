@@ -77,6 +77,7 @@ Idealização, direção e decisões editoriais: **Sidiney Rodrigues**. Desenvol
 
 - [LinkedIn](https://www.linkedin.com/in/sidineyrodrigues/?locale=pt)
 - [GitHub](https://github.com/sidineyr)
+- [Currículo Lattes](http://lattes.cnpq.br/6984746568461949)
 - [Projeto educativo Chemical](https://sidineyr.github.io/Chemical/)
 
 Os créditos aparecem após a entrada inicial, na apresentação, no questionário e no resultado. Outros perfis só devem ser adicionados com URLs confirmadas pelo autor. As referências educacionais não representam vínculo institucional.
