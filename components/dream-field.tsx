@@ -31,9 +31,9 @@ export function DreamField({ value, onChange }: { value: string; onChange: (valu
   function preferenceChanged() {
    clearTimeout(timer);
    setSuggestion(motion.matches ? examples[0] : null);
-   if (!motion.matches) { word = 0; length = 0; deleting = false; timer = setTimeout(tick, 10000); }
+   if (!motion.matches) { word = 0; length = 0; deleting = false; tick(); }
   }
-  timer = setTimeout(tick, 10000);
+  tick();
   motion.addEventListener('change', preferenceChanged);
   return () => { clearTimeout(timer); motion.removeEventListener('change', preferenceChanged); };
  }, [value, paused]);
