@@ -1,33 +1,72 @@
 # Horizonte
 
-Exploração vocacional educativa em português brasileiro para estudantes na fase do ENEM. Projeto independente; os arquivos do portal Chemical não foram alterados.
+Site de exploração vocacional educativa para estudantes na fase do ENEM. A experiência começa com **“Eu quero ser…”** e ajuda a investigar interesses, caminhos de formação e próximos passos — sem definir uma profissão pelo estudante.
 
-## Experiência
+- [Repositório oficial](https://github.com/sidineyr/horizonte)
+- [Site hospedado](https://horizonte-vocacional.blubier.chatgpt.site) — acesso privado no momento da migração; requer autorização do proprietário.
 
-- Entrada minimalista: “Eu quero ser…” e campo livre.
-- Orientação inicial e 29 perguntas: 18 de interesse, 6 de habilidades percebidas e 5 de contexto.
-- Dashboard com radar, valores acessíveis, 12 grupos de caminhos, cursos, justificativas e atividades de exploração.
-- Revisão e edição das respostas; relatório local em texto.
-- Respostas apenas em memória, sem cadastro, analytics ou transmissão a APIs. Atualizar a página apaga o progresso.
+O Horizonte é um projeto independente do portal Chemical. O código fica na raiz deste repositório; não é necessário instalar ou copiar o Chemical para executá-lo.
 
-## Limites pedagógicos
+## O que está implementado
 
-Questionário autoral educativo, não teste psicológico validado. A classificação RIASEC serve como referência conceitual; o instrumento não é o O*NET Interest Profiler. As associações entre grupos de cursos e interesses são editoriais, sem validação preditiva. Não estima aptidão, admissão, salário ou empregabilidade.
+1. Entrada com campo livre para uma profissão, um sonho ou “ainda não sei”.
+2. Apresentação do percurso e dos limites da ferramenta.
+3. Questionário de 29 perguntas: 18 sobre interesses, 6 sobre habilidades percebidas e 5 sobre contexto.
+4. Dashboard com radar e valores textuais dos seis interesses, três sugestões em destaque e lista dos 12 grupos de caminhos.
+5. Cursos para investigar, justificativas, atividades de exploração e planejamento conforme as respostas.
+6. Revisão e edição das respostas, reinício com confirmação e download do relatório em texto (`.txt`).
 
-Três itens de interesse por dimensão, cada um de 0 a 4. Índice da dimensão = soma / 12 × 100, arredondado. Índice do grupo = 60% da dimensão principal + 40% da secundária. Empates são ordenados alfabeticamente. As habilidades e condições de estudo não penalizam a classificação. O sonho digitado é retomado como reflexão, sem interpretação automática ou IA. Contexto personaliza as orientações de planejamento.
+O questionário não é um teste psicológico validado. Não estima aptidão, nota de corte, elegibilidade a bolsas, salário ou empregabilidade. Não utiliza IA para interpretar o texto inicial ou gerar recomendações. Veja a [metodologia e os limites](docs/METODOLOGIA.md).
+
+## Executar localmente
+
+Requisitos do projeto: Node.js **22.13 ou superior** e pnpm. A instalação original utilizou pnpm **11.19.0**. Preserve `pnpm-lock.yaml` e respeite as políticas de segurança do seu ambiente.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm dev
+```
+
+Abra o endereço exibido no terminal. Não abra os arquivos TSX diretamente no navegador.
+
+### Scripts de instalação de dependências
+
+`pnpm-workspace.yaml` contém decisões pendentes de autorização para os scripts de `esbuild`, `sharp` e `workerd`. Conforme a política local, a instalação pode terminar com `ERR_PNPM_IGNORED_BUILDS`. Isso não significa que o ambiente está pronto.
+
+Revise as dependências e, quando permitido pela política do ambiente, utilize `pnpm approve-builds` para registrar a decisão explícita sobre cada uma. Depois, execute novamente a instalação. Não desative verificações de segurança nem aprove scripts indiscriminadamente. Essas autorizações não são necessárias para responder ao questionário; são decisões do ambiente de desenvolvimento.
+
+## Verificações e build
+
+```sh
+pnpm test
+pnpm typecheck
+pnpm build
+pnpm start
+```
+
+- `test`: testes automatizados da pontuação, validação das respostas e orientações de planejamento.
+- `typecheck`: checagem TypeScript sem emitir arquivos.
+- `build`: gera o pacote de produção em `dist/`.
+- `start`: executa localmente o pacote já construído, com Wrangler; não publica o site.
+- `lint` e `format`: ferramentas adicionais de análise e formatação. Não são executadas automaticamente pelos testes.
+
+O build usa Vinext/Vite e produz uma aplicação compatível com Cloudflare Workers. **Não é um pacote estático pronto para GitHub Pages.**
+
+## Documentação
+
+- [Metodologia, pontuação e limites](docs/METODOLOGIA.md)
+- [Arquitetura, desenvolvimento e verificações](docs/DESENVOLVIMENTO.md)
+- [Privacidade e tratamento das respostas](docs/PRIVACIDADE.md)
+- [Repositório, migração e hospedagem](docs/HOSPEDAGEM.md)
+
+## Privacidade
+
+As respostas ficam apenas na memória da página. Não há cadastro próprio, banco de respostas ou envio das respostas a APIs. Atualizar ou fechar a página apaga o progresso. O relatório baixado permanece no dispositivo. O provedor de hospedagem pode autenticar o visitante e registrar dados técnicos de acesso; isso é separado do questionário. Consulte a [documentação de privacidade](docs/PRIVACIDADE.md).
 
 ## Referências
 
-- https://www.onetcenter.org/IP.html — referência conceitual das seis áreas de interesse.
-- https://acessounico.mec.gov.br/ — consulta aos programas e editais atuais.
-- https://emec.mec.gov.br/ — consulta de instituições e cursos superiores.
+- [O*NET Resource Center](https://www.onetcenter.org/IP.html): referência conceitual das seis áreas de interesse, sem transferência de validação para este questionário.
+- [Acesso Único — MEC](https://acessounico.mec.gov.br/): consulta de programas de ingresso e editais vigentes.
+- [e-MEC](https://emec.mec.gov.br/): consulta de instituições e cursos superiores.
 
-## Desenvolvimento
-
-Node >= 22.13; pnpm. Scripts: `pnpm dev`, `pnpm build`. Tipos: `pnpm exec tsc --noEmit`. Testes de pontuação: `node --test tests/scoring.test.mjs` (Node com suporte a TypeScript por remoção de tipos).
-
-O ambiente pode exigir autorização explícita dos scripts de instalação de dependências nativas. Não remova controles de segurança para instalar.
-
-## Validação
-
-Build de produção, TypeScript e testes de limites, empates, respostas inválidas, independência de condições financeiras e 100 combinações de respostas. Sem teste visual automatizado em navegador.
+O Horizonte não é vinculado ao MEC ou ao O*NET. Consulte sempre as fontes oficiais para decisões de ingresso e reconhecimento de cursos.
