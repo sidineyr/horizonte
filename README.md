@@ -3,7 +3,7 @@
 Site de exploração vocacional educativa para estudantes na fase do ENEM. A experiência começa com **“Eu quero ser…”** e ajuda a investigar interesses, caminhos de formação e próximos passos — sem definir uma profissão pelo estudante.
 
 - [Repositório oficial](https://github.com/sidineyr/horizonte)
-- [Site hospedado](https://horizonte-vocacional.blubier.chatgpt.site) — acesso privado no momento da migração; requer autorização do proprietário.
+- [Site hospedado](https://horizonte-vocacional.blubier.chatgpt.site) — acesso público.
 
 O Horizonte é um projeto independente do portal Chemical. O código fica na raiz deste repositório; não é necessário instalar ou copiar o Chemical para executá-lo.
 
@@ -70,3 +70,14 @@ As respostas ficam apenas na memória da página. Não há cadastro próprio, ba
 - [e-MEC](https://emec.mec.gov.br/): consulta de instituições e cursos superiores.
 
 O Horizonte não é vinculado ao MEC ou ao O*NET. Consulte sempre as fontes oficiais para decisões de ingresso e reconhecimento de cursos.
+
+## Créditos e conexões
+
+Idealização, direção e decisões editoriais: **Sidiney Rodrigues**. Desenvolvimento, interface, testes e documentação com apoio do OpenAI Codex, sob direção humana. Imagem social criada com geração de imagem da OpenAI.
+
+- [LinkedIn](https://www.linkedin.com/in/sidineyrodrigues/?locale=pt)
+- [GitHub](https://github.com/sidineyr)
+- [Projeto educativo Chemical](https://sidineyr.github.io/Chemical/)
+
+Os créditos aparecem após a entrada inicial, na apresentação, no questionário e no resultado. Outros perfis só devem ser adicionados com URLs confirmadas pelo autor. As referências educacionais não representam vínculo institucional.
+
