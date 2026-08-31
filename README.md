@@ -86,3 +86,6 @@ Os créditos aparecem após a entrada inicial, na apresentação, no questionár
 ## Como esse teste foi elaborado
 
 A apresentação e o resultado incluem uma seção expansível com o processo de elaboração, os três blocos de perguntas, exemplo de pontuação, limites e bibliografia. Distingue a página do O*NET efetivamente consultada na criação de dois livros recomendados: *Making Vocational Choices*, de John L. Holland (3. ed., 1997), e *Career Counseling*, de Mark L. Savickas (2. ed., 2019). Referências completas e escopo da consulta estão em [Metodologia](docs/METODOLOGIA.md).
+
+### Entrada e sugestões visuais
+A página inicial apresenta o questionário, o método e os créditos. Após 10 segundos com o campo vazio, exemplos de profissões aparecem com efeito de digitação no placeholder; nunca preenchem ou enviam uma resposta. Digitar cancela o efeito; limpar o campo reinicia a espera. É possível pausar as sugestões. Com redução de movimento ativada, aparece apenas um exemplo estático. O botão da apresentação permite continuar com “Ainda não sei”.

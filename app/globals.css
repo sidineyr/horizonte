@@ -190,3 +190,16 @@ button, input, a { -webkit-tap-highlight-color: transparent; }
 .entry-privacy small { display: block; font-size: 11px; line-height: 1.7; color: #647266; margin-top: 10px; }
 .entry .entry-form { transform: none; padding-block: 28px; }
 @media(max-width:600px) { .entry-welcome { margin-bottom: 26px; }.entry-welcome p { font-size: 14px; }.entry-privacy { padding: 18px; }.entry h1 { margin-bottom: 26px; } }
+
+/* Entrada: descoberta, apresentação e transparência no mesmo fluxo. */
+.entry { position: relative; padding-bottom: 74px; }
+.entry-scroll { position: absolute; bottom: 24px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 12px; text-decoration: underline; text-underline-offset: 5px; }
+.dream-help { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; }
+.dream-help p { color: #596b61; font-size: 11px; line-height: 1.7; max-width: 410px; }
+.dream-help button { font-size: 11px; min-height: 40px; flex-shrink: 0; }
+.entry-continuation { padding-block: 70px 36px; scroll-margin-top: 24px; }
+.entry-continuation h2 { font: 400 clamp(34px,5vw,58px)/1.15 Georgia,serif; letter-spacing: -1.4px; margin: 22px 0; }
+.entry-continuation .lead { max-width: 820px; font-size: 16px; }
+.entry-continuation .intro-facts { gap: 32px; padding-block: 30px; }
+.entry-method-link { display: inline-flex; align-items: center; min-height: 48px; font-size: 13px; text-decoration: underline; text-underline-offset: 5px; }
+@media(max-width:600px) { .dream-help { align-items: flex-start; flex-direction: column; gap: 2px; }.dream-help button { padding-inline: 0; }.entry-continuation { padding-top: 46px; }.entry-continuation h2 { letter-spacing: -.8px; } }
