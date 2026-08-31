@@ -7,6 +7,16 @@ Site de exploração vocacional educativa para estudantes na fase do ENEM. A exp
 
 O Horizonte é um projeto independente do portal Chemical. O código fica na raiz deste repositório; não é necessário instalar ou copiar o Chemical para executá-lo.
 
+
+## Atualizações recentes e comunidade
+
+O Horizonte agora oferece **português, inglês, espanhol, alemão, francês e mandarim (chinês simplificado)** na interface, no questionário e no relatório. Trocar o idioma preserva respostas, etapa e pontuação; as traduções são locais, sem envio das respostas a serviços externos.
+
+As melhorias recentes também incluem sugestões de profissões com animação imediata, uma página inicial com apresentação do questionário, método e bibliografia, créditos e Currículo Lattes, além de um contador agregado de testes concluídos que não armazena respostas.
+
+**O Horizonte está aberto e aguardando contribuições da comunidade para continuar melhorando.** São especialmente bem-vindas revisões das traduções por falantes nativos, melhorias de acessibilidade, correções de problemas e sugestões educacionais fundamentadas.
+
+Veja o [histórico das atualizações](CHANGELOG.md) e o [guia de contribuição](CONTRIBUTING.md). Participe pelas [issues](https://github.com/sidineyr/horizonte/issues) ou envie um pull request.
 ## O que está implementado
 
 1. Entrada com apresentação breve, aviso de privacidade antes do preenchimento e campo livre para uma profissão, um sonho ou “ainda não sei”.
@@ -80,12 +90,12 @@ Idealização, direção e decisões editoriais: **Sidiney Rodrigues**. Desenvol
 - [Currículo Lattes](http://lattes.cnpq.br/6984746568461949)
 - [Projeto educativo Chemical](https://sidineyr.github.io/Chemical/)
 
-Os créditos aparecem após a entrada inicial, na apresentação, no questionário e no resultado. Outros perfis só devem ser adicionados com URLs confirmadas pelo autor. As referências educacionais não representam vínculo institucional.
+Os créditos aparecem na página inicial, na apresentação, no questionário e no resultado. Outros perfis só devem ser adicionados com URLs confirmadas pelo autor. As referências educacionais não representam vínculo institucional.
 
 
 ## Como esse teste foi elaborado
 
-A apresentação e o resultado incluem uma seção expansível com o processo de elaboração, os três blocos de perguntas, exemplo de pontuação, limites e bibliografia. Distingue a página do O*NET efetivamente consultada na criação de dois livros recomendados: *Making Vocational Choices*, de John L. Holland (3. ed., 1997), e *Career Counseling*, de Mark L. Savickas (2. ed., 2019). Referências completas e escopo da consulta estão em [Metodologia](docs/METODOLOGIA.md).
+A página inicial, a apresentação e o resultado incluem uma seção expansível com o processo de elaboração, os três blocos de perguntas, exemplo de pontuação, limites e bibliografia. Distingue a página do O*NET efetivamente consultada na criação de dois livros recomendados: *Making Vocational Choices*, de John L. Holland (3. ed., 1997), e *Career Counseling*, de Mark L. Savickas (2. ed., 2019). Referências completas e escopo da consulta estão em [Metodologia](docs/METODOLOGIA.md).
 
 ### Entrada e sugestões visuais
 A página inicial apresenta o questionário, o método e os créditos. Ao entrar na página com o campo vazio, exemplos de profissões aparecem imediatamente com efeito de digitação no placeholder; nunca preenchem ou enviam uma resposta. Digitar cancela o efeito; limpar o campo reinicia as sugestões imediatamente. É possível pausar as sugestões. Com redução de movimento ativada, aparece apenas um exemplo estático. O botão da apresentação permite continuar com “Ainda não sei”.
