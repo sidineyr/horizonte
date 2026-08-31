@@ -1,7 +1,9 @@
+'use client';
+import { Localize } from '@/components/language';
 import { ExternalLink } from 'lucide-react';
 
 export function QuestionnaireMethod() {
-  return (
+  return (<Localize>
     <section id="como-esse-teste-foi-elaborado" className="questionnaire-method page-width" aria-labelledby="method-title">
       <span className="eyebrow">TRANSPARÊNCIA E REFERÊNCIAS</span>
       <h2 id="method-title">Como esse teste foi elaborado</h2>
@@ -38,5 +40,5 @@ export function QuestionnaireMethod() {
         </div>
       </details>
     </section>
-  );
+  </Localize>);
 }

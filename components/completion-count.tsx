@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { Localize, useLanguage } from '@/components/language';
 export function CompletionCount() {
+ const {locale}=useLanguage();
  const [total,setTotal] = useState<number|null>(null);
  const [failed,setFailed] = useState(false);
  useEffect(()=>{
@@ -11,8 +13,8 @@ export function CompletionCount() {
    .catch(error=>{if(error.name!=='AbortError')setFailed(true);});
   return ()=>controller.abort();
  },[]);
- return <div className="completion-count" aria-live="polite">
-  <strong>{total===null ? (failed?'Contador temporariamente indisponível':'Carregando participações…') : total===0 ? 'Seja a primeira pessoa a concluir este teste!' : <><span>{total.toLocaleString('pt-BR')}</span> {total===1?'pessoa já fez esse teste!':'pessoas já fizeram esse teste!'}</>}</strong>
+ return <Localize><div className="completion-count" aria-live="polite">
+  <strong>{total===null ? (failed?'Contador temporariamente indisponível':'Carregando participações…') : total===0 ? 'Seja a primeira pessoa a concluir este teste!' : <><span>{total.toLocaleString(locale)}</span> {total===1?'pessoa já fez esse teste!':'pessoas já fizeram esse teste!'}</>}</strong>
   <small>Conclusões registradas desde 31/08/2026. Uma pessoa pode participar mais de uma vez. Apenas visitar a página não aumenta o contador.</small>
- </div>;
+ </div></Localize>;
 }

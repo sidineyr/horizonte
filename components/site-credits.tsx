@@ -1,7 +1,9 @@
+'use client';
+import { Localize } from '@/components/language';
 import { ExternalLink } from 'lucide-react';
 
 export function SiteCredits() {
-  return (
+  return (<Localize>
     <footer className="site-credits page-width" aria-labelledby="credits-title">
       <div className="credits-intro">
         <span className="eyebrow">CRÉDITOS E CONEXÕES</span>
@@ -20,5 +22,5 @@ export function SiteCredits() {
         <a className="credits-source" href="https://github.com/sidineyr/horizonte" target="_blank" rel="noopener noreferrer">Código e documentação do Horizonte <ExternalLink size={14} aria-hidden="true"/><span className="sr-only">(abre em nova aba)</span></a>
       </div>
     </footer>
-  );
+  </Localize>);
 }
