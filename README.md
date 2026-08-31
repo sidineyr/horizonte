@@ -89,3 +89,7 @@ A apresentação e o resultado incluem uma seção expansível com o processo de
 
 ### Entrada e sugestões visuais
 A página inicial apresenta o questionário, o método e os créditos. Ao entrar na página com o campo vazio, exemplos de profissões aparecem imediatamente com efeito de digitação no placeholder; nunca preenchem ou enviam uma resposta. Digitar cancela o efeito; limpar o campo reinicia as sugestões imediatamente. É possível pausar as sugestões. Com redução de movimento ativada, aparece apenas um exemplo estático. O botão da apresentação permite continuar com “Ainda não sei”.
+## Contador público de conclusões
+Desde 31/08/2026, o site mantém no D1 apenas um total agregado de questionários concluídos. O navegador envia apenas {"completed":true}, sem profissão, respostas, resultados ou identificador do participante. O serviço recebe dados técnicos inerentes à conexão, sujeitos às condições da hospedagem.
+Visitar a página não soma. Voltar para editar respostas não soma novamente na mesma tentativa. Reiniciar e concluir outra tentativa soma novamente; não se mede pessoas únicas. Nenhum histórico anterior foi estimado. Não há cookies ou armazenamento local para deduplicação.
+O contador é indicativo, não uma métrica auditada: chamadas automatizadas podem inflar o total e falhas de rede podem causar subcontagem. A API verifica a origem das notificações, mas não comprova por si só que alguém respondeu ao questionário. O questionário continua funcionando se o contador estiver indisponível.

@@ -54,3 +54,8 @@ Este roteiro descreve verificações recomendadas; não afirma que todas foram r
 Mantenha a interface em português brasileiro. Separe interesse de habilidade e de condições de acesso. Evite coletar informações pessoais desnecessárias. Não adicione telemetria de respostas ou persistência sem revisar a arquitetura, a informação ao usuário e os controles de privacidade.
 
 Alterações de domínio exigem revisar as URLs absolutas de imagem social e `metadataBase` em `app/layout.tsx`.
+
+## Persistência do contador
+A interface continua na rota /. GET /api/completions lê o total e POST /api/completions incrementa atomicamente uma única linha no binding D1 DB. Não aceita respostas, perfis ou identificadores. A deduplicação de revisões é em memória por tentativa, sem retry automático de POST.
+O esquema está em db/schema.ts; scripts/generate-counter-migration.mjs gera drizzle/0000_completion_counter.sql e seu journal. O helper lib/counter.ts inicializa a mesma tabela com CREATE TABLE IF NOT EXISTS. A publicação inclui as migrações e o binding lógico em .openai/hosting.json. O banco local do Wrangler é separado do banco de produção.
+Verifique localmente: GET não incrementa; POST com origem autorizada e corpo exato soma um; POST com outra origem ou respostas no corpo é rejeitado; incrementos concorrentes não se perdem. Não envie eventos de teste ao contador de produção.

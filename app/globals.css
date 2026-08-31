@@ -203,3 +203,7 @@ button, input, a { -webkit-tap-highlight-color: transparent; }
 .entry-continuation .intro-facts { gap: 32px; padding-block: 30px; }
 .entry-method-link { display: inline-flex; align-items: center; min-height: 48px; font-size: 13px; text-decoration: underline; text-underline-offset: 5px; }
 @media(max-width:600px) { .dream-help { align-items: flex-start; flex-direction: column; gap: 2px; }.dream-help button { padding-inline: 0; }.entry-continuation { padding-top: 46px; }.entry-continuation h2 { letter-spacing: -.8px; } }
+.completion-count { margin-top: 22px; text-align: center; }
+.completion-count strong { display: block; font-size: 15px; color: #245c4d; }
+.completion-count strong span { font: 400 26px Georgia,serif; }
+.completion-count small { display: block; max-width: 470px; margin: 8px auto 0; font-size: 10px; line-height: 1.7; color: #596b61; }

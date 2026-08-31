@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { CompletionCount } from '@/components/completion-count';
 import { SiteCredits } from '@/components/site-credits';
 import { QuestionnaireMethod } from '@/components/questionnaire-method';
 import { ArrowRight, ArrowLeft, Check, Compass, Download, ExternalLink, RotateCcw, Sprout } from 'lucide-react';
@@ -16,18 +17,26 @@ export default function Home() {
  const [index,setIndex] = useState(0);
  const [answers,setAnswers] = useState<Record<string,number>>({});
  const [tab,setTab] = useState<'overview'|'answers'>('overview');
+ const completionSent = useRef(false);
+ useEffect(()=>{
+  if(stage!=='result' || completionSent.current || questions.some(q=>answers[q.id]===undefined))return;
+  completionSent.current = true;
+  // One notification per completed attempt, including when reviewing answers.
+  // Do not retry ambiguous requests: an increment may already have succeeded.
+  void fetch('/api/completions',{method:'POST',headers:{'Content-Type':'application/json'},body:'{"completed":true}'}).catch(()=>{});
+ },[stage,answers]);
  const heading = useRef<HTMLHeadingElement>(null);
  useEffect(()=>{ if(stage!=='entry') {heading.current?.focus(); window.scrollTo({top:0,behavior:'instant'});} },[stage,index,tab]);
  const question = questions[index];
  const labels = question.options ?? (question.kind==='skill'?skillLabels:interestLabels);
  const result = stage==='result'?evaluate(answers):null;
- function restart(){setDream('');setAnswers({});setIndex(0);setTab('overview');setStage('entry');}
+ function restart(){completionSent.current=false;setDream('');setAnswers({});setIndex(0);setTab('overview');setStage('entry');}
  function download(){
   if(!result)return;
   const report = ['HORIZONTE — MEU MAPA DE POSSIBILIDADES',`Eu quero ser: ${dream}`,'','EXPLORAÇÃO EDUCATIVA. Não é teste psicológico validado nem previsão de sucesso.','',...dimensions.map(d=>`${d.name}: ${result.scores[d.key]}/100`),'','CAMINHOS PARA INVESTIGAR',...result.ranked.slice(0,3).map(c=>`${c.name} (${c.score}/100 no índice exploratório)\n${c.fields}\nExperimente: ${c.experiment}`),'','PRÓXIMOS PASSOS',...nextSteps(answers),'','MINHAS RESPOSTAS',...questions.map(q=>`${q.title}\n${(q.options??(q.kind==='skill'?skillLabels:interestLabels))[answers[q.id]]}`),'','Método: 3 itens por interesse, notas 0 a 4, soma / 12 × 100. Caminhos: 60% do interesse principal + 40% do secundário. Empates não indicam preferência. Habilidades e contexto não reduzem o índice.','Fontes: https://www.onetcenter.org/IP.html | https://acessounico.mec.gov.br/ | https://emec.mec.gov.br/'].join('\n');
   const url=URL.createObjectURL(new Blob([report],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='meu-mapa-horizonte.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
  }
- if(stage==='entry')return <div className="entry-page"><main className="entry"><form className="entry-form" onSubmit={e=>{e.preventDefault();if(dream.trim()){setDream(dream.trim());setStage('intro');}}}><div className="entry-welcome"><span className="eyebrow">BEM-VINDO AO HORIZONTE</span><p>Explore seus interesses e descubra possibilidades de formação depois do ENEM. Responda a 29 perguntas e receba um mapa com sugestões e próximos passos — um ponto de partida, não uma escolha definitiva.</p></div><label htmlFor="dream"><h1>Eu quero ser<span>…</span></h1></label><DreamField value={dream} onChange={setDream}/><div className="entry-privacy" id="entry-privacy"><strong>Suas respostas ficam com você.</strong><p>O Horizonte não envia, armazena em banco de dados nem divulga o texto que você digita ou suas respostas. Tudo fica apenas na memória desta página e se perde ao fechar ou atualizar. Não é necessário cadastro.</p><small>Se baixar seu mapa, o arquivo ficará no seu dispositivo. A hospedagem pode registrar dados técnicos de acesso, separados das respostas ao questionário.</small></div></form><a className="entry-scroll" href="#conheca-questionario">Conheça o questionário <span aria-hidden="true">↓</span></a></main>
+ if(stage==='entry')return <div className="entry-page"><main className="entry"><form className="entry-form" onSubmit={e=>{e.preventDefault();if(dream.trim()){setDream(dream.trim());setStage('intro');}}}><div className="entry-welcome"><span className="eyebrow">BEM-VINDO AO HORIZONTE</span><p>Explore seus interesses e descubra possibilidades de formação depois do ENEM. Responda a 29 perguntas e receba um mapa com sugestões e próximos passos — um ponto de partida, não uma escolha definitiva.</p></div><label htmlFor="dream"><h1>Eu quero ser<span>…</span></h1></label><DreamField value={dream} onChange={setDream}/><CompletionCount/><div className="entry-privacy" id="entry-privacy"><strong>Suas respostas ficam com você.</strong><p>O Horizonte não envia, armazena em banco de dados nem divulga o texto que você digita ou suas respostas. Tudo fica apenas na memória desta página e se perde ao fechar ou atualizar. Não é necessário cadastro.</p><small>Ao concluir, enviamos apenas um aviso de conclusão para somar ao contador público, sem suas respostas ou identificação. Se baixar seu mapa, o arquivo ficará no seu dispositivo. A hospedagem pode registrar dados técnicos de acesso, separados das respostas ao questionário.</small></div></form><a className="entry-scroll" href="#conheca-questionario">Conheça o questionário <span aria-hidden="true">↓</span></a></main>
 <section className="entry-continuation page-width" id="conheca-questionario" aria-labelledby="entry-about-title">
  <span className="eyebrow">ANTES DE ESCOLHER, EXPLORE</span>
  <h2 id="entry-about-title">Não precisa ter tudo decidido<br/>para dar o <em>primeiro passo.</em></h2>
