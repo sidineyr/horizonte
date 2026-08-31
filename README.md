@@ -9,7 +9,7 @@ O Horizonte é um projeto independente do portal Chemical. O código fica na rai
 
 ## O que está implementado
 
-1. Entrada com campo livre para uma profissão, um sonho ou “ainda não sei”.
+1. Entrada com apresentação breve, aviso de privacidade antes do preenchimento e campo livre para uma profissão, um sonho ou “ainda não sei”.
 2. Apresentação do percurso e dos limites da ferramenta.
 3. Questionário de 29 perguntas: 18 sobre interesses, 6 sobre habilidades percebidas e 5 sobre contexto.
 4. Dashboard com radar e valores textuais dos seis interesses, três sugestões em destaque e lista dos 12 grupos de caminhos.

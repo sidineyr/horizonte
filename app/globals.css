@@ -181,3 +181,12 @@ button, input, a { -webkit-tap-highlight-color: transparent; }
 .method-books .book-purpose { font-size: 12px; }
 .method>a { text-decoration: underline; text-underline-offset: 4px; font-size: 13px; }
 @media(max-width:760px) { .method-blocks { grid-template-columns: 1fr; gap: 10px; }.method-content { padding: 0 18px 20px; }.method-disclosure>summary { padding: 18px; }.method-reference { max-width: 100%; } }
+.entry-welcome { text-align: center; margin: 0 auto 34px; max-width: 590px; }
+.entry-welcome .eyebrow { color: #597047; margin-bottom: 14px; }
+.entry-welcome p { font-size: 15px; line-height: 1.8; color: #596b61; }
+.entry-privacy { margin-top: 30px; border: 1px solid #d8dfd2; background: #ffffff70; border-radius: 12px; padding: 20px 23px; }
+.entry-privacy strong { display: block; font-size: 13px; margin-bottom: 8px; }
+.entry-privacy p { font-size: 12px; line-height: 1.8; color: #526358; margin: 0; }
+.entry-privacy small { display: block; font-size: 11px; line-height: 1.7; color: #647266; margin-top: 10px; }
+.entry .entry-form { transform: none; padding-block: 28px; }
+@media(max-width:600px) { .entry-welcome { margin-bottom: 26px; }.entry-welcome p { font-size: 14px; }.entry-privacy { padding: 18px; }.entry h1 { margin-bottom: 26px; } }
