@@ -81,3 +81,7 @@ Idealização, direção e decisões editoriais: **Sidiney Rodrigues**. Desenvol
 
 Os créditos aparecem após a entrada inicial, na apresentação, no questionário e no resultado. Outros perfis só devem ser adicionados com URLs confirmadas pelo autor. As referências educacionais não representam vínculo institucional.
 
+
+## Como esse teste foi elaborado
+
+A apresentação e o resultado incluem uma seção expansível com o processo de elaboração, os três blocos de perguntas, exemplo de pontuação, limites e bibliografia. Distingue a página do O*NET efetivamente consultada na criação de dois livros recomendados: *Making Vocational Choices*, de John L. Holland (3. ed., 1997), e *Career Counseling*, de Mark L. Savickas (2. ed., 2019). Referências completas e escopo da consulta estão em [Metodologia](docs/METODOLOGIA.md).

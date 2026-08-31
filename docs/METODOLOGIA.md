@@ -51,3 +51,18 @@ O catálogo não cobre todas as profissões, formações ou realidades regionais
 Antes de decidir, compare matrizes curriculares, reconhecimento, modalidade, estágios, custos, deslocamento, apoios à permanência e atividades profissionais. Consulte os editais e as instituições. Conversas com profissionais, estudantes e orientadores complementam o roteiro.
 
 Ao alterar perguntas, pesos ou catálogo, revise também os testes, o texto explicativo do dashboard, o relatório baixado e esta documentação. Mudanças não devem introduzir afirmações de validação sem evidências apropriadas.
+
+## Como esse teste foi elaborado: fontes e livros
+
+A seção pública “Como esse teste foi elaborado” está disponível após a entrada inicial, na apresentação e no resultado. O componente `components/questionnaire-method.tsx` reúne a descrição dos blocos, o cálculo, limites de validação, fonte efetivamente consultada e livros recomendados. A seção não aparece entre as perguntas, para preservar o foco na resposta.
+
+### Fonte consultada na criação
+
+NATIONAL CENTER FOR O*NET DEVELOPMENT. **O*NET Interest Profiler.** O*NET Resource Center. Disponível em: https://www.onetcenter.org/IP.html. Consulta inicial durante a criação do Horizonte em 31 ago. 2026. Fonte da organização conceitual das seis áreas de interesse, não dos itens autorais nem dos pesos editoriais.
+
+### Livros recomendados
+
+1. HOLLAND, John L. **Making Vocational Choices: A Theory of Vocational Personalities and Work Environments.** 3. ed. Odessa, FL: Psychological Assessment Resources, 1997. [Registro bibliográfico](https://ndlsearch.ndl.go.jp/books/R100000136-I1971993809750310729). Aprofundamento teórico sobre interesses e ambientes profissionais.
+2. SAVICKAS, Mark L. **Career Counseling.** 2. ed. Washington, DC: American Psychological Association, 2019. DOI: [10.1037/0000105-000](https://doi.org/10.1037/0000105-000). [Amostra oficial](https://www.apa.org/pubs/books/Career-Counseling-2e-Chapter-1-Sample.pdf). Leitura complementar sobre construção de trajetórias profissionais; o Horizonte não aplica seu protocolo de aconselhamento.
+
+Dados bibliográficos verificados em 31 ago. 2026, a partir de registro de biblioteca, informações editoriais e amostra oficial. Não houve consulta integral a esses livros na criação das perguntas. Os livros são recomendações de aprofundamento, não fontes retrospectivamente atribuídas à elaboração do questionário. Não foram reproduzidos itens de instrumentos, protocolos, tabelas ou trechos extensos dos livros. A citação não implica endosso dos autores ou validação do Horizonte.

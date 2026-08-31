@@ -161,3 +161,23 @@ button, input, a { -webkit-tap-highlight-color: transparent; }
 .credits-details { display: grid; gap: 18px; align-content: start; }
 .credits-details h3 { font-size: 12px; font-weight: 600; margin-bottom: 7px; }
 @media(max-width:760px) { .site-credits { grid-template-columns: 1fr; gap: 28px; }.credits-intro h2 { font-size: 28px; } }
+.questionnaire-method { margin-top: 28px; margin-bottom: 38px; padding-top: 32px; border-top: 1px solid var(--border); scroll-margin-top: 24px; }
+.questionnaire-method h2 { font: 400 clamp(27px,4vw,36px)/1.2 Georgia,serif; letter-spacing: -.7px; margin: 14px 0; }
+.method-intro { max-width: 760px; color: #596b61; font-size: 14px; line-height: 1.8; }
+.method-disclosure { margin-top: 20px; border: 1px solid var(--border); border-radius: 12px; background: #fffefa; }
+.method-disclosure>summary { padding: 20px 24px; font-size: 14px; font-weight: 600; min-height: 58px; }
+.method-content { max-width: 940px; padding: 0 26px 26px; }
+.method-content h3 { font: 400 23px/1.3 Georgia,serif; margin: 30px 0 12px; }
+.method-content p,.method-content dd { font-size: 13px; line-height: 1.85; color: #596b61; margin: 10px 0; }
+.method-notice { background: #edf1e5; border-left: 3px solid #819b58; padding: 18px 20px; margin-top: 4px; }
+.method-notice strong { font-size: 14px; }
+.method-blocks { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin: 22px 0; }
+.method-blocks dt { font-size: 13px; font-weight: 600; }
+.method-reference { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; margin-right: 18px; font-size: 12px; text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.method-books { list-style: decimal; padding-left: 22px; }
+.method-books li { padding: 14px 0 18px 8px; border-bottom: 1px solid var(--border); }
+.method-books li::marker { color: #648044; font-weight: 600; }
+.method-books cite { font-style: italic; color: #153e38; }
+.method-books .book-purpose { font-size: 12px; }
+.method>a { text-decoration: underline; text-underline-offset: 4px; font-size: 13px; }
+@media(max-width:760px) { .method-blocks { grid-template-columns: 1fr; gap: 10px; }.method-content { padding: 0 18px 20px; }.method-disclosure>summary { padding: 18px; }.method-reference { max-width: 100%; } }
