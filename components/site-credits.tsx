@@ -21,6 +21,13 @@ export function SiteCredits() {
         <div><h3>Conhecimento e referências</h3><p>Exploração educativa inspirada nas áreas de interesse RIASEC, com referência conceitual ao O*NET. Não é um teste psicológico validado nem possui vínculo institucional com O*NET ou MEC.</p></div>
         <a className="credits-source" href="https://github.com/sidineyr/horizonte" target="_blank" rel="noopener noreferrer">Código e documentação do Horizonte <ExternalLink size={14} aria-hidden="true"/><span className="sr-only">(abre em nova aba)</span></a>
       </div>
-    </footer>
+    
+      <p style={{ width: '100%', marginTop: '0.65rem', fontSize: '0.75rem', lineHeight: 1.5, opacity: 0.72 }}>
+        Este projeto nasceu do desejo de ensinar e cuidar. Se ele tocou você,{' '}
+        <a href="https://pequenoprincipe.org.br/doadores/apoie-o-pequeno-principe/" target="_blank" rel="noopener noreferrer">
+          considere doar diretamente ao Hospital Pequeno Príncipe
+        </a>. Iniciativa voluntária, independente e sem intermediação financeira.
+      </p>
+</footer>
   </Localize>);
 }
