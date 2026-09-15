@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import './globals.css';
-const title = 'Horizonte — Eu quero ser…';
-const description = 'Explore seus interesses, suas possibilidades de formação e seus próximos passos depois do ENEM.';
+const title = 'Horizonte — Orientação profissional e teste vocacional gratuito';
+const description = 'Teste vocacional gratuito e educativo para explorar interesses, cursos, profissões e próximos passos depois do ENEM.';
 const image = 'https://horizonte-vocacional.blubier.chatgpt.site/og.png';
 export const metadata: Metadata = {
  title, description,
+ keywords: ['teste vocacional gratuito', 'orientação profissional', 'orientação vocacional', 'escolha profissional', 'carreiras', 'cursos depois do ENEM', 'RIASEC'],
+ authors: [{ name: 'Sidiney Rodrigues', url: 'https://github.com/sidineyr' }],
+ creator: 'Sidiney Rodrigues',
  alternates: { canonical: 'https://horizonte-vocacional.blubier.chatgpt.site/' },
  robots: { index: true, follow: true },
  verification: { google: 'PC5Jb-nRbCO9IwJ_YQNDpJFpqOldwyEjN_pBfv0OKkw' },

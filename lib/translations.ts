@@ -1,5 +1,17 @@
 // Portuguese source text -> English, Spanish, German, French, Simplified Chinese.
 export const translations: Record<string, readonly string[]> = {
+ "Outros projetos educacionais gratuitos": [
+  "Other free educational projects", "Otros proyectos educativos gratuitos", "Weitere kostenlose Bildungsprojekte", "Autres projets éducatifs gratuits", "其他免费教育项目"
+ ],
+ "Este projeto nasceu do desejo de ensinar e cuidar. Se ele tocou você,": [
+  "This project grew from a desire to teach and care. If it touched you,", "Este proyecto nació del deseo de enseñar y cuidar. Si te conmovió,", "Dieses Projekt entstand aus dem Wunsch, zu lehren und Fürsorge zu zeigen. Wenn es Sie berührt hat,", "Ce projet est né du désir d'enseigner et de prendre soin. S'il vous a touché,", "这个项目源于教育与关怀的愿望。如果它打动了你，"
+ ],
+ "considere doar diretamente ao Hospital Pequeno Príncipe": [
+  "consider donating directly to Hospital Pequeno Príncipe", "considera donar directamente al Hospital Pequeno Príncipe", "erwägen Sie eine direkte Spende an das Hospital Pequeno Príncipe", "envisagez de faire un don directement à l'Hospital Pequeno Príncipe", "请考虑直接向佩克诺普林西比医院捐款"
+ ],
+ ". Iniciativa voluntária, independente e sem intermediação financeira.": [
+  ". A voluntary, independent initiative with no financial intermediation.", ". Iniciativa voluntaria, independiente y sin intermediación financiera.", ". Eine freiwillige, unabhängige Initiative ohne finanzielle Vermittlung.", ". Initiative bénévole et indépendante, sans intermédiaire financier.", "。这是一项自愿、独立且无资金中介的倡议。"
+ ],
  "Prático": [
   "Practical",
   "Práctico",
